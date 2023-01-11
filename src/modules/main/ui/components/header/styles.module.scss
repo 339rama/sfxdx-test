@@ -1,0 +1,32 @@
+.header {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 200px 1fr 200px;
+    padding: 26px 70px;
+
+    @media (max-width: 480px) {
+        justify-items: normal;
+        grid-template-columns: 1fr 1fr;
+        padding: 15px 20px;
+    }
+}
+
+.logo {
+    grid-column-start: 2;
+
+    @media (max-width: 480px) {
+        grid-column-start: 1;
+    }
+}
+
+.connect-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    justify-self: end;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

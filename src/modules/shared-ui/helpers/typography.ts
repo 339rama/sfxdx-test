@@ -1,0 +1,1 @@
+export const formatID = (id:string| null | undefined, maxLength: number) => id && id.length > maxLength  ? id.slice(0, 10) + '...' + id.slice(id.length - 3) : id;

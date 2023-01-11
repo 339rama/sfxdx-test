@@ -1,0 +1,19 @@
+@import '~/styles/variables/colors.scss';
+
+.main-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    min-height: 100vh;
+
+    background-color: $LightGreyscaleBgLight;
+}
+
+.main-layout-header {
+    z-index: 1;
+}
+
+.main-layout-content {
+    z-index: 1;
+}

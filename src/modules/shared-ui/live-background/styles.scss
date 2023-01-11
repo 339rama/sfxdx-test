@@ -1,0 +1,79 @@
+@use "sass:color";
+
+@import '~/styles/variables/colors.scss';
+
+
+@keyframes move {
+    100% {
+        transform: translate3d(0, 0, 1px) rotate(360deg);
+    }
+}
+
+.background {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.background span {
+    display: inline-block;
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    backface-visibility: hidden;
+    animation: move;
+    animation-duration: 24s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    filter: blur(42px);
+}
+
+@mixin radialBgPrime($color) {
+    background: radial-gradient(
+        ellipse, 
+        rgba($color, 0.5) 25%, 
+        rgba($color, 0.2) 45%, 
+        rgba($color, 0.1) 55%,
+        rgba($color, 0.05) 65%,
+        rgba($color, 0.02) 70%,
+        rgba($color, 0.01) 80%,
+        transparent);
+}
+
+@mixin radialBgSecondary($color) {
+    background: radial-gradient(
+        ellipse, 
+        rgba($color, 0.5) 0%, 
+        rgba($color, 0.2) 35%, 
+        rgba($color, 0.1) 46%, 
+        rgba($color, 0.05) 57%, 
+        rgba($color, 0.02) 64%, 
+        rgba($color, 0.01) 71%, 
+        transparent 117%);
+}
+
+.background span:nth-child(1) {
+    @include radialBgPrime($LightAssentsAccent1Quaternary);
+    animation-duration: 111s;
+    animation-delay: -245s;
+    transform-origin: 0;
+}
+.background span:nth-child(2) {
+    @include radialBgSecondary($LightSystemErrorSuccessful);
+    animation-duration: 93s;
+    animation-delay: -172s;
+    transform-origin: 0;
+}
+.background span:nth-child(3) {
+    @include radialBgSecondary($LightSystemErrorSuccessful);
+    animation-duration: 117s;
+    animation-delay: -195s;
+    transform-origin:0;
+}
+.background span:nth-child(4) {
+    @include radialBgPrime($LightAssentsAccent1Quaternary);
+    animation-duration: 223s;
+    animation-delay: -83s;
+    transform-origin:0;
+}

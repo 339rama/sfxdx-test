@@ -1,0 +1,61 @@
+@import '~/styles/variables/colors.scss';
+
+.footer {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    padding: 26px 70px;
+    grid-template-areas: "nav logo social" "nav rights social";
+
+    @media (max-width: 480px){
+        padding-top: 40px;
+        padding-bottom: 40px;
+        justify-items: center;
+        gap: 34px;
+        grid-template-columns: 1fr;
+        grid-template-areas: "logo" "nav" "social" "rights";
+        background-color: white;
+        border: none;
+    }
+}
+
+
+.footer-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    grid-area: nav;
+
+    @media (max-width: 480px){
+        align-items: center;
+    }
+}
+
+.footer-nav-item {
+    color: $LightGreyscaleTextSecondary;
+}
+
+.footer-logo {
+   justify-self: center;
+
+    @media (max-width: 480px){
+        margin-bottom: 26px;
+    }
+}
+
+.footer-rights {
+    justify-self: center;
+    margin-top: 74px;
+    color: $LightGreyscaleTextTertiary;
+    grid-area: rights;
+
+    @media (max-width: 480px){
+        margin-top: 0;
+    }
+}
+
+.footer-social {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    grid-area: social;
+}
